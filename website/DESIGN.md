@@ -86,11 +86,14 @@ Rules that follow from this:
 The platform font, because that is what the library itself renders with: SF Pro
 on macOS, Segoe UI Variable on Windows, with `Noto Sans SC` / `PingFang SC` for
 Chinese. Monospace prefers `ui-monospace` / SF Mono and falls back to
-`JetBrains Mono`. No webfont is downloaded for body text. Base size 15px.
+`JetBrains Mono`. No webfont is downloaded for body text. Base size 16px;
+docs prose runs at 17px, with docs chrome (nav,
+sidebar, TOC) at 14px.
 
 - **Display** — `clamp(2.2rem, 4.3vw, 3.6rem)`, weight 660, tracking `-0.042em`.
 - **Section heading** — `clamp(2rem, 3.6vw, 3rem)`, weight 660, tracking `-0.045em`.
-- **Body** — 1rem, line-height 1.7; docs prose is capped at `46rem`.
+- **Body** — 1rem; docs prose 1.0625rem (17px), line-height 1.75, capped at
+  `46rem`.
 - **Kicker / label** — 0.66–0.68rem mono, uppercase, wide tracking, muted.
   Small mono labels, not colour, mark structure.
 - **Maturity labels** (`maturity` frontmatter) sit between a page title and its

@@ -134,8 +134,8 @@ html.dark .comparison-no { color: #f87171; }
 
   /* Layout */
   --nav-height: 56px;
-  --sidebar-width: 220px;
-  --toc-width: 200px;
+  --sidebar-width: 240px;
+  --toc-width: 210px;
   --layout-max-width: 1280px;
 }
 
@@ -227,7 +227,7 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-size: 15px;
+  font-size: 16px;
   letter-spacing: -0.003em;
 }
 
@@ -504,12 +504,15 @@ html.dark .astro-code span {
 
 .doc-content {
   color: var(--foreground);
+  /* Prose reads at 17px — the measure react.dev sets — while the docs chrome
+     (nav, sidebar, TOC) stays at 14px. */
+  font-size: 1.0625rem;
 
   h1 { margin-bottom: 1rem; }
 
   > h1:first-child {
     margin-bottom: 1rem;
-    font-size: clamp(1.75rem, 2.6vw, 2rem);
+    font-size: clamp(1.875rem, 3vw, 2.25rem);
     font-weight: 660;
     letter-spacing: -0.03em;
     line-height: 1.25;
@@ -557,14 +560,14 @@ html.dark .astro-code span {
     margin-top: 3rem;
     padding-bottom: 0.75rem;
     border-bottom: 1px solid var(--border);
-    font-size: 1.35rem;
+    font-size: 1.5rem;
     font-weight: 640;
     letter-spacing: -0.022em;
   }
 
   h3 {
     margin-top: 2rem;
-    font-size: 1.02rem;
+    font-size: 1.125rem;
     font-weight: 640;
     letter-spacing: -0.012em;
   }
@@ -651,7 +654,7 @@ html.dark .astro-code span {
   .callout__title {
     margin-bottom: 0.5rem;
     color: var(--callout-accent, var(--foreground));
-    font-size: 0.9rem;
+    font-size: 0.9375rem;
     font-weight: 640;
     letter-spacing: -0.01em;
   }
@@ -692,7 +695,7 @@ html.dark .astro-code span {
     padding: 0.45rem 0.85rem;
     border-radius: calc(var(--radius-card) - 3px);
     color: var(--muted-foreground);
-    font-size: 0.875rem;
+    font-size: 0.9375rem;
     font-weight: 600;
     cursor: pointer;
   }
@@ -1179,7 +1182,7 @@ html.dark .astro-code span {
     border-spacing: 0;
     overflow: hidden;
     background: var(--background);
-    font-size: 0.875rem;
+    font-size: 0.9375rem;
   }
 
   tr { border-top: 0; }
@@ -1233,7 +1236,7 @@ html.dark .astro-code span {
     border: 1px solid var(--border);
     border-radius: 0.25rem;
     background: var(--secondary);
-    font-size: 0.84em;
+    font-size: 0.88em;
     line-height: 1.2;
     padding: 0.1em 0.35em;
     transition: background-color 140ms ease;
@@ -1248,10 +1251,10 @@ html.dark .astro-code span {
     border: 1px solid var(--border);
     border-radius: var(--radius-card);
     background: var(--code-bg) !important;
-    font-size: 0.875rem;
+    font-size: 0.9375rem;
   }
 
-  pre code { display: block; padding: 1rem; overflow-x: auto; font-size: 0.875em; line-height: 1.7; }
+  pre code { display: block; padding: 1rem; overflow-x: auto; font-size: inherit; line-height: 1.7; }
 
   /* Shiki provides the token boundaries; theme tokens supply the colours. */
   .astro-code { color: var(--code-fg) !important; }
@@ -1362,7 +1365,7 @@ html.dark .astro-code span {
   flex-shrink: 0;
   color: var(--foreground) !important;
   white-space: nowrap;
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   font-weight: 620;
   letter-spacing: -0.022em;
   text-decoration: none !important;
@@ -1385,7 +1388,7 @@ html.dark .astro-code span {
   padding: 0 0.6rem;
   border-radius: var(--radius-control);
   color: var(--foreground);
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 500;
   text-decoration: none;
   transition: background 140ms ease, color 140ms ease;
@@ -1450,8 +1453,8 @@ html.dark .astro-code span {
 .site-nav__native-shell-bottom { stop-color: #7ea51f; }
 .dark .site-nav__native-shell-top { stop-color: #e2fb9f; }
 .dark .site-nav__native-shell-bottom { stop-color: #a9d63f; }
-.site-nav__projects-menu strong { font-size: 0.8125rem; font-weight: 600; }
-.site-nav__projects-menu span { color: var(--muted-foreground); font-size: 0.75rem; }
+.site-nav__projects-menu strong { font-size: 0.875rem; font-weight: 600; }
+.site-nav__projects-menu span { color: var(--muted-foreground); font-size: 0.8125rem; }
 .site-nav__projects-menu a.is-current { background: var(--secondary); }
 .site-nav__projects-menu a.is-current strong { color: var(--brand); }
 
@@ -1468,7 +1471,7 @@ html.dark .astro-code span {
   padding: 0 0.6rem;
   border-radius: var(--radius-control);
   color: var(--foreground);
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 500;
   cursor: pointer;
   transition: background 140ms ease;
@@ -1507,7 +1510,7 @@ html.dark .astro-code span {
   padding: 0.4rem 0.55rem;
   border-radius: var(--radius-control);
   color: var(--foreground);
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 450;
   text-decoration: none;
   white-space: nowrap;
@@ -1575,7 +1578,7 @@ html.dark .astro-code span {
 /* Sidebar group heading */
 .sidebar-group__title {
   color: var(--muted-foreground);
-  font: 620 0.68rem/1 var(--font-mono);
+  font: 620 0.72rem/1 var(--font-mono);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 0.4rem 0;
@@ -1595,7 +1598,7 @@ html.dark .astro-code span {
   background-clip: padding-box;
   border-radius: var(--radius-control);
   color: var(--foreground);
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   line-height: 1.5;
   text-decoration: none;
   transition: color 140ms ease, background 140ms ease;
@@ -1615,7 +1618,7 @@ html.dark .astro-code span {
 .sidebar-subgroup-title {
   padding: 0.28rem 0.5rem;
   color: var(--muted-foreground);
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 500;
 }
 
@@ -1646,7 +1649,7 @@ html.dark .astro-code span {
   padding-top: 1rem;
   border-top: 1px solid var(--border);
   color: var(--muted-foreground);
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   line-height: 1.6;
 }
 
@@ -1668,7 +1671,7 @@ html.dark .astro-code span {
   max-height: calc(100vh - var(--nav-height));
   overflow-y: auto;
   padding: 3rem 0 3rem 1.75rem;
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
 
   /* A long outline still scrolls; it just does not draw a rail of its own
      beside the page's. `scrollbar-width` overrides the global `thin`. */
@@ -1684,7 +1687,7 @@ html.dark .astro-code span {
 .toc__label {
   margin: 0 0 0.7rem;
   color: var(--foreground);
-  font: 620 0.7rem/1 var(--font-mono);
+  font: 620 0.72rem/1 var(--font-mono);
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
@@ -1721,7 +1724,7 @@ html.dark .astro-code span {
   color: var(--brand);
 }
 
-.toc__item--sub a { padding-left: 1.5rem; font-size: 0.78rem; }
+.toc__item--sub a { padding-left: 1.5rem; font-size: 0.8125rem; }
 
 /* Below this the three columns stop fitting inside the content box. */
 @media (max-width: 1180px) {
@@ -1746,10 +1749,10 @@ html.dark .astro-code span {
   padding: 2.5rem 0;
   border-top: 1px solid var(--border);
   color: var(--muted-foreground);
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
 }
 
-.site-footer strong { color: var(--foreground); font-size: 0.82rem; }
+.site-footer strong { color: var(--foreground); font-size: 0.875rem; }
 .site-footer__brand p { max-width: 32rem; margin: 0.55rem 0 0; line-height: 1.6; }
 
 .site-footer nav {
@@ -1912,7 +1915,7 @@ html.dark .astro-code span {
 .doc-pager--next { text-align: right; margin-left: auto; }
 
 .doc-pager__label {
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   color: var(--muted-foreground);
   margin-bottom: 0.25rem;
   font-weight: 500;
@@ -1920,7 +1923,7 @@ html.dark .astro-code span {
   letter-spacing: 0.05em;
 }
 
-.doc-pager__title { font-size: 0.9rem; font-weight: 560; }
+.doc-pager__title { font-size: 0.9375rem; font-weight: 560; }
 
 /* ====================================================================
    Search button (nav)
@@ -1938,7 +1941,7 @@ html.dark .astro-code span {
   border-radius: var(--radius-control);
   background: var(--background);
   color: var(--muted-foreground);
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   cursor: pointer;
   transition: border-color 140ms ease, background 140ms ease;
 }
