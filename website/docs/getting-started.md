@@ -185,10 +185,9 @@ what is reusable.
 </svg>
 
 - **Entities live.** Your view is an `Entity` that survives between frames and
-  owns state. It is the counterpart of a React component instance and its
-  hooks.
+  owns state.
 - **Elements get rebuilt.** `render` returns a fresh element tree on every
-  redraw, like React's virtual DOM.
+  redraw.
 - **Components are stateless.** `Button`, `Input`, and friends are `RenderOnce`
   builders. Values in, elements out, like pure function components. Lasting
   state stays with you. An `Input`'s text lives in an `Entity<InputState>`
